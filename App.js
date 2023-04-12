@@ -4,6 +4,8 @@ const { UserRouter } = require('./Routes/UserRoutes');
 const app = express();
 const session = require('express-session');
 const { CartRouter } = require('./Routes/CartRouter');
+require('./Config/database')
+require('dotenv').config();
 const mongoDbSession = require('connect-mongodb-session')(session);
 const store = new mongoDbSession({
     uri : process.env.MONGO_URI,
@@ -13,8 +15,6 @@ const store = new mongoDbSession({
 
 const cors = require('cors');
 const Product = require('./Schema/Product');
-require('./Config/database')
-require('dotenv').config();
 
 
 app.use(cors({credentials: true, origin: true}));
@@ -28,12 +28,7 @@ app.use(session({
 }))
 
 
-app.get('/getAll', async (req, res) => {
-    const data = await Product.find();
-    res.send({
-        data : data
-    })
-})
+
 app.use(express.json())
 app.use('/product', ProductRouter);
 app.use('/user', UserRouter)

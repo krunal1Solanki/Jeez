@@ -68,3 +68,14 @@ exports.logoutUser = (req, res) => {
         })
     }
 } 
+
+exports.checkAuth = (req, res) => {
+    try {
+        if(!req.session.isAuth) throw new Error('Unauthorized');
+        return res.status(200).send();
+    } catch (error) {
+        return res.status(401).send({
+            message : 'Unauthorized',
+        })
+    }
+}

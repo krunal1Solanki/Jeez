@@ -41,7 +41,7 @@ const ProductModel = class {
                     $facet: {
                         data: [
                             { $skip: skip },
-                            { $limit: 2 }
+                            { $limit: 4 }
                         ]
                     }
                 }
