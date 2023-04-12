@@ -11,19 +11,15 @@ const store = new mongoDbSession({
     uri : process.env.MONGO_URI,
     collection : "sessions",
     sameSite: 'none', 
-    secure: true,
-    cookie : {
-        secure : true,
-    }
 });
 
 const cors = require('cors');
 const Product = require('./Schema/Product');
 
 
-// app.use(cors({credentials: true, origin: true}));
+app.use(cors({credentials: true, origin: 'true'}));
 
-app.use(cors({credentials: true, origin: 'https://euphonious-yeot-a494ba.netlify.app'}));
+// app.use(cors({credentials: true, origin: 'https://euphonious-yeot-a494ba.netlify.app'}));
 
   
 app.use(session({
