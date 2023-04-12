@@ -11,6 +11,10 @@ const store = new mongoDbSession({
     uri : process.env.MONGO_URI,
     collection : "sessions",
     sameSite: 'none', 
+    secure: true,
+    cookie : {
+        secure : true,
+    }
 });
 
 const cors = require('cors');
