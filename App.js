@@ -17,7 +17,7 @@ const cors = require('cors');
 const Product = require('./Schema/Product');
 
 
-app.use(cors({credentials: true, origin: 'true'}));
+app.use(cors({credentials: true, origin: '*'}));
 
 // app.use(cors({credentials: true, origin: 'https://euphonious-yeot-a494ba.netlify.app'}));
 
