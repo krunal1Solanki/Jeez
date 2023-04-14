@@ -40,6 +40,7 @@ exports.registerUser =  (async (req, res) => {
 
 exports.loginUser = (async (req, res) => {
     const {name, password} = req.body;
+    console.log(req.session);
     try {
         const info = await UserModel.loginUserFun({name, password, req});
         console.log(req.session);

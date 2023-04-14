@@ -23,7 +23,7 @@ const ProductModel = class {
             throw error
         }
     }
-
+    
     static findProduct = async (productId) => {
         try {
             const product = await Product.findOne({_id : productId});

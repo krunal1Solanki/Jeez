@@ -6,5 +6,4 @@ exports.storage = multer.diskStorage({
       filename: function (req, file, cb) {
         return cb(null, `${Date.now()}_${file.originalname}`)
       }
-
 })

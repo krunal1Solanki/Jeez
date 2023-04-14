@@ -5,9 +5,9 @@ const CartRouter = express.Router();
 
 
 CartRouter.route('/add-to-cart').post(isAuth, addToCart); 
-CartRouter.route('/remove-from-cart').get(removeFromCart);
-CartRouter.route('/get-carts').get(getCarts);
-CartRouter.route('/get-my-cart').get(getMyCart);
+CartRouter.route('/remove-from-cart').get(isAuth, removeFromCart);
+CartRouter.route('/get-carts').get(isAuth, getCarts);
+CartRouter.route('/get-my-cart').get(isAuth, getMyCart);
 
 
 module.exports =  {CartRouter}
