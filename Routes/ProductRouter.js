@@ -8,9 +8,9 @@ const { storage } = require('../Middlewares/Multer');
 const upload = multer({storage : storage})
 
 
-ProductRouter.route('/add-product').post(isAuth, upload.single('image'), addProduct); 
+ProductRouter.route('/add-product').post( upload.single('image'), addProduct); 
 ProductRouter.route('/get-products').get(getProducts)
-ProductRouter.route('/update-item-quantity').put(isAuth, updateProductQuantity)
+ProductRouter.route('/update-item-quantity').put(updateProductQuantity)
 // Router.route('/list-carts')
 
 module.exports =  {ProductRouter}
