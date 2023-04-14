@@ -17,7 +17,9 @@ const cors = require('cors');
 const Product = require('./Schema/Product');
 
 
-app.use(cors({credentials: true, origin: '*'}));
+// app.use(cors({credentials: true, origin: '*'}));
+app.use(cors({credentials: true, origin: 'https://tiny-granita-85f1b0.netlify.app'}));
+
 
   
 app.use(session({
